@@ -1,0 +1,96 @@
+{
+	"React Native Component": {
+		"prefix": "rnc",
+		"body": [
+			"import React, { PureComponent } from 'react'",
+			"import { View } from 'react-native'",
+			"import { styleSheetCreate, style, } from 'app/system/helpers'",
+			"",
+			"interface IProps {",
+			"",
+			"}",
+			"",
+			"interface IState {",
+			"",
+			"}",
+			"",
+			"export class Common extends PureComponent<IProps, IState> {"
+			"",
+			" state = {"
+			"",
+			" }"
+			"",
+			" render(): JSX.Element {",
+			"   return("
+			"     <View style={styles.container}>",
+			"      ",
+			"     </View>",
+			"    )"
+			"  }"
+			"}"
+			"const styles = styleSheetCreate({",
+			"  container: style.view({",
+			"",
+			"  }),"
+			"})"
+		],
+		"description": "Component React Native"
+	},
+	"React Native Connected Component": {
+		"prefix": "rncc",
+		"body": [
+			"import React, { PureComponent } from 'react'",
+			"import { View } from 'react-native'",
+			"import { styleSheetCreate, style, } from 'app/system/helpers'",
+			"import { connectStore, IApplicationState, } from 'app/system/store'",
+			"import { ThunkDispatch } from 'redux-thunk'",
+			"",
+			"interface IDispatchProps {",
+			"",
+			"}",
+			"",
+			"interface IStateProps {",
+			"",
+			"}",
+			"",
+			"interface IProps {",
+			"",
+			"}",
+			"",
+			"interface IState {",
+			"",
+			"}",
+			"",
+			"@connectStore("
+			"  (state: IApplicationState): IStateProps => ({"
+			" //  isLoading: state.global.isLoading,",
+			"  }),",
+			"  (dispatch: ThunkDispatch<IApplicationState, void, any>): IDispatchProps => ({"
+			"  //  removeError(): void {"
+			"  // 	dispatch(globalActions.removeModal())"
+			"  //  },",
+			"  })"
+			")"
+			"export class Common extends PureComponent<IStateProps & IDispatchProps & IProps, IState> {"
+			"",
+			" state = {"
+			"",
+			" }"
+			"",
+			" render(): JSX.Element {",
+			"   return("
+			"     <View style={styles.container}>",
+			"      ",
+			"     </View>",
+			"    )"
+			"  }"
+			"}"
+			"const styles = styleSheetCreate({",
+			"  container: style.view({",
+			"",
+			"  }),"
+			"})"
+		],
+		"description": "Connected Component React Native"
+	}
+}
